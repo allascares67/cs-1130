@@ -1,19 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Page Title</title>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit Conversions</title>
+  <script>
+    function celsiusToFahrenheit() {
+      var celsius = parseFloat(document.getElementById('celsius').value);
+      var fahrenheit = (celsius * 9/5) + 32;
+      document.getElementById('result').innerHTML = `${celsius} Celsius is equal to ${fahrenheit.toFixed(2)} Fahrenheit`;
+    }
+
+    function fahrenheitToCelsius() {
+      var fahrenheit = parseFloat(document.getElementById('fahrenheit').value);
+      var celsius = (fahrenheit - 32) * 5/9;
+      document.getElementById('result').innerHTML = `${fahrenheit} Fahrenheit is equal to ${celsius.toFixed(2)} Celsius`;
+    }
+
+    function metersToFeet() {
+      var meters = parseFloat(document.getElementById('meters').value);
+      var feet = meters * 3.28084;
+      document.getElementById('result').innerHTML = `${meters} m is equal to ${feet.toFixed(2)} ft`;
+    }
+
+    function feetToMeters() {
+      var feet = parseFloat(document.getElementById('feet').value);
+      var meters = feet * 0.3048;
+      document.getElementById('result').innerHTML = `${feet} ft is equal to ${meters.toFixed(2)} m`;
+    }
+  </script>
 </head>
 <body>
 
-<h1>My 1 Heading</h1>
-<h2>My 2 Heading</h2>
-<h3>My 3 Heading</h3>
-<h4>My 4 Heading</h4>
-<h5>My 5 Heading</h5>
-<h6>My 6 Heading</h6>
+  <h2>Unit Conversions</h2>
 
-  
-<p>My first paragraph.</p>
+  <label for="celsius">Celsius to Fahrenheit:</label>
+  <input type="number" id="celsius" placeholder="Enter Number">
+  <button onclick="celsiusToFahrenheit()">Convert</button>
+
+  <br><br>
+
+  <label for="fahrenheit">Fahrenheit to Celsius:</label>
+  <input type="number" id="fahrenheit" placeholder="Enter Number">
+  <button onclick="fahrenheitToCelsius()">Convert</button>
+
+  <br><br>
+
+  <label for="meters">Meters to Feet:</label>
+  <input type="number" id="meters" placeholder="Enter Number">
+  <button onclick="metersToFeet()">Convert</button>
+
+  <br><br>
+
+  <label for="feet">Feet to Meters:</label>
+  <input type="number" id="feet" placeholder="Enter Number">
+  <button onclick="feetToMeters()">Convert</button>
+
+  <br><br>
+
+  <div id="result"></div>
 
 </body>
 </html>
